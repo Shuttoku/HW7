@@ -12,23 +12,39 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
-String result = "0";
-
+  String result = "0";
 
   buttonPressed(String value) {
-    
+    setState(() {
+      if (value == "CLEAR") {
+        result = "0";
+      } else if(
+        value == "."
+      ){
+        if(result.contains(".")) {
+          return;
+        }
 
-setState(() {
-  result = value;
-});
-    
+
+      
+      
+      
+      }else {
+
+        if(result == "0" ){
+        result = value;
+        } else {
+          result = result + value;
+        } 
+
+      }
+    });
   }
 
   Widget myButton(String buttonLabel) {
     return Expanded(
       child: OutlinedButton(
-        onPressed: () =>  buttonPressed(buttonLabel),
+        onPressed: () => buttonPressed(buttonLabel),
         child: Text(buttonLabel,
             style: TextStyle(
               fontSize: 20,
