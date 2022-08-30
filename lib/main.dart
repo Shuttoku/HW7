@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +14,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String result = "0";
+  String expression = "";
 
   buttonPressed(String value) {
     setState(() {
@@ -23,13 +25,24 @@ class _MyAppState extends State<MyApp> {
       ){
         if(result.contains(".")) {
           return;
+        }else{
+          result = result + value;
         }
 
+      }else if(value == "="){
 
+expression = result.replaceAll("X", "*");
+
+  Parser p = Parser();
+  Expression exp = p.parse(expression);
+  ContextModel cm = ContextModel();
+  dynamic calculate = exp.evaluate(EvaluationType.REAL, cm);
+
+
+     
       
       
-      
-      }else {
+       }else {
 
         if(result == "0" ){
         result = value;
