@@ -14,10 +14,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
 Widget myButton(){
-    return OutlinedButton(
-                    onPressed: () {},
-                    child: Text("xxx"),
-                  );
+    return Expanded(
+      child: OutlinedButton(
+                      onPressed: () {},
+                      child: Text("xxx"),
+                    ),
+    );
 
 
 }
@@ -39,7 +41,20 @@ Widget myButton(){
                   myButton(),
                   myButton(),
                   myButton(),
-                  myButton()
+                  myButton(),
+
+                  
+
+                ],
+              ),
+
+              
+              Row(
+                children: [
+                  myButton(),
+                  myButton(),
+                  myButton(),
+                  myButton(),
 
                   
 
