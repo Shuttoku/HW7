@@ -19,7 +19,20 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text("Calculator"),
         ),
-      body: Column()
+      body: Column(
+        children: [
+          Row(
+            children: [
+              OutlinedButton(
+                onPressed: (){
+
+                },
+                child: Text("xxx"),
+              ),
+            ],
+          ),
+        ],
+      )
       ),
     );
     
