@@ -42,10 +42,27 @@ Widget myButton(String buttonLabel){
           appBar: AppBar(
             title: Text("Calculator"),
           ),
-          body: Column(
+          body: SafeArea(
+            child: Column(
             children: [
+              Container(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "Result",
+                  style: TextStyle(
+                    fontSize: 48,
+                    fontWeight: FontWeight.bold
+                  ),
 
-              Row(
+                ),
+              ),
+              Expanded(
+                child: Divider(),
+              ),
+
+              Column(
+                children: [
+                  Row(
                 children: [
                   myButton("7"),
                   myButton("8"),
@@ -86,7 +103,10 @@ Widget myButton(String buttonLabel){
                   myButton("="),
                 ],
               ),
+                ],
+              ),
              ],    
+          ),
           ),
     ));
   
