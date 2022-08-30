@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -11,30 +12,41 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+Widget myButton(){
+    return OutlinedButton(
+                    onPressed: () {},
+                    child: Text("xxx"),
+                  );
+
+
+}
+
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Calculator"),
-        ),
-      body: Column(
-        children: [
-          Row(
+          appBar: AppBar(
+            title: Text("Calculator"),
+          ),
+          body: Column(
             children: [
-              OutlinedButton(
-                onPressed: (){
+              Row(
+                children: [
+                  myButton(),
+                  myButton(),
+                  myButton(),
+                  myButton()
 
-                },
-                child: Text("xxx"),
+                  
+
+                ],
               ),
             ],
-          ),
-        ],
-      )
-      ),
+          )),
     );
-    
   }
 }
