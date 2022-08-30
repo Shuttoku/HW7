@@ -38,6 +38,7 @@ expression = result.replaceAll("X", "*");
   ContextModel cm = ContextModel();
   dynamic calculate = exp.evaluate(EvaluationType.REAL, cm);
 
+result = "$calculate";
 
      
       
@@ -61,24 +62,38 @@ expression = result.replaceAll("X", "*");
         child: Text(buttonLabel,
             style: TextStyle(
               fontSize: 20,
+              color: Colors.pink,
             )),
       ),
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
+          
           appBar: AppBar(
-            title: Text("Calculator"),
+             
+            title: Text("Calculator <3",
+                      style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.yellow,
+                          fontWeight: FontWeight.bold),
+                          
+            ),
+            
+            
+            
           ),
           body: SafeArea(
             child: Column(
               children: [
                 Container(
                   alignment: Alignment.centerRight,
+                  color: Colors.lime,
                   child: Text(
                     result,
                     style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
@@ -132,6 +147,9 @@ expression = result.replaceAll("X", "*");
               ],
             ),
           ),
-        ));
+        )
+        
+        );
+        
   }
 }
